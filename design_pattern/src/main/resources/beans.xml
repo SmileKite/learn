@@ -1,0 +1,9 @@
+<beans>
+    <bean id="redisService" class="com.design.di.RedisService">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+    <bean id="dataSource" class="com.design.di.DataSource" scope="singleton">
+        <constructor-arg type="String" value="127.0.0.1"/>
+        <constructor-arg type="String" value="3306"/>
+    </bean>
+</beans>
