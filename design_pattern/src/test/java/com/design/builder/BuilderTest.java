@@ -32,7 +32,7 @@ public class BuilderTest {
     /**
      * 测试姓名为空的builder校验
      */
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testNameNullError() {
         BuilderDemo demo = new BuilderDemo.Builder()
                 .setName("")
@@ -50,7 +50,7 @@ public class BuilderTest {
     /**
      * 测试attr限制的builder校验
      */
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testAttrConformityError() {
         BuilderDemo demo = new BuilderDemo.Builder()
                 .setName("zhang")
@@ -68,7 +68,7 @@ public class BuilderTest {
     /**
      * 测试num非负的builder校验
      */
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testNumNegativeError() {
         BuilderDemo demo = new BuilderDemo.Builder()
                 .setName("zhang")
@@ -86,7 +86,7 @@ public class BuilderTest {
     /**
      * 测试num不能相等的builder校验
      */
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void testNumSameError() {
         BuilderDemo demo = new BuilderDemo.Builder()
                 .setName("zhang")
