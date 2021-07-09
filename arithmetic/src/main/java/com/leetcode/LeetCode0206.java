@@ -7,7 +7,7 @@ import com.leetcode.entity.ListNode;
  * @author lizhenyu
  * @date 2021/7/9
  */
-public class LeetCode206 {
+public class LeetCode0206 {
 
     /**
      * 链表翻转（使用递归）

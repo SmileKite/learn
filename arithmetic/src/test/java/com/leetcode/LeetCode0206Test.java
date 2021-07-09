@@ -8,16 +8,16 @@ import org.junit.Test;
  * @author lizhenyu
  * @date 2021/7/9
  */
-public class LeetCode206Test {
+public class LeetCode0206Test {
 
     /**
      * 测试链表为null的情况
      */
     @Test
     public void testNullV1() {
-        LeetCode206 leetCode206 = new LeetCode206();
+        LeetCode0206 leetCode0206 = new LeetCode0206();
 
-        ListNode listNode = leetCode206.reverseListV1(null);
+        ListNode listNode = leetCode0206.reverseListV1(null);
         showListNode(listNode);
     }
 
@@ -26,9 +26,9 @@ public class LeetCode206Test {
      */
     @Test
     public void testNullV2() {
-        LeetCode206 leetCode206 = new LeetCode206();
+        LeetCode0206 leetCode0206 = new LeetCode0206();
 
-        ListNode listNode = leetCode206.reverseListV2(null);
+        ListNode listNode = leetCode0206.reverseListV2(null);
         showListNode(listNode);
     }
 
@@ -37,10 +37,10 @@ public class LeetCode206Test {
      */
     @Test
     public void testEmptyV1() {
-        LeetCode206 leetCode206 = new LeetCode206();
+        LeetCode0206 leetCode0206 = new LeetCode0206();
         ListNode head = new ListNode();
 
-        ListNode listNode = leetCode206.reverseListV1(head);
+        ListNode listNode = leetCode0206.reverseListV1(head);
         showListNode(listNode);
     }
 
@@ -49,10 +49,10 @@ public class LeetCode206Test {
      */
     @Test
     public void testEmptyV2() {
-        LeetCode206 leetCode206 = new LeetCode206();
+        LeetCode0206 leetCode0206 = new LeetCode0206();
         ListNode head = new ListNode();
 
-        ListNode listNode = leetCode206.reverseListV2(head);
+        ListNode listNode = leetCode0206.reverseListV2(head);
         showListNode(listNode);
     }
 
@@ -61,10 +61,10 @@ public class LeetCode206Test {
      */
     @Test
     public void testSingleV1() {
-        LeetCode206 leetCode206 = new LeetCode206();
+        LeetCode0206 leetCode0206 = new LeetCode0206();
         ListNode head = new ListNode(1);
 
-        ListNode listNode = leetCode206.reverseListV1(head);
+        ListNode listNode = leetCode0206.reverseListV1(head);
         showListNode(listNode);
     }
 
@@ -73,10 +73,10 @@ public class LeetCode206Test {
      */
     @Test
     public void testSingleV2() {
-        LeetCode206 leetCode206 = new LeetCode206();
+        LeetCode0206 leetCode0206 = new LeetCode0206();
         ListNode head = new ListNode(1);
 
-        ListNode listNode = leetCode206.reverseListV2(head);
+        ListNode listNode = leetCode0206.reverseListV2(head);
         showListNode(listNode);
     }
 
@@ -85,11 +85,11 @@ public class LeetCode206Test {
      */
     @Test
     public void testDoubleV1() {
-        LeetCode206 leetCode206 = new LeetCode206();
+        LeetCode0206 leetCode0206 = new LeetCode0206();
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
 
-        ListNode listNode = leetCode206.reverseListV1(head);
+        ListNode listNode = leetCode0206.reverseListV1(head);
         showListNode(listNode);
     }
 
@@ -98,11 +98,11 @@ public class LeetCode206Test {
      */
     @Test
     public void testDoubleV2() {
-        LeetCode206 leetCode206 = new LeetCode206();
+        LeetCode0206 leetCode0206 = new LeetCode0206();
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
 
-        ListNode listNode = leetCode206.reverseListV2(head);
+        ListNode listNode = leetCode0206.reverseListV2(head);
         showListNode(listNode);
     }
 
@@ -111,7 +111,7 @@ public class LeetCode206Test {
      */
     @Test
     public void testCommonV1() {
-        LeetCode206 leetCode206 = new LeetCode206();
+        LeetCode0206 leetCode0206 = new LeetCode0206();
         ListNode head = new ListNode(1);
         ListNode two = new ListNode(2);
         ListNode three = new ListNode(3);
@@ -123,7 +123,7 @@ public class LeetCode206Test {
         four.next = five;
 
 
-        ListNode listNode = leetCode206.reverseListV1(head);
+        ListNode listNode = leetCode0206.reverseListV1(head);
         showListNode(listNode);
     }
 
@@ -132,7 +132,7 @@ public class LeetCode206Test {
      */
     @Test
     public void testCommonV2() {
-        LeetCode206 leetCode206 = new LeetCode206();
+        LeetCode0206 leetCode0206 = new LeetCode0206();
         ListNode head = new ListNode(1);
         ListNode two = new ListNode(2);
         ListNode three = new ListNode(3);
@@ -144,7 +144,7 @@ public class LeetCode206Test {
         four.next = five;
 
 
-        ListNode listNode = leetCode206.reverseListV2(head);
+        ListNode listNode = leetCode0206.reverseListV2(head);
         showListNode(listNode);
     }
 
