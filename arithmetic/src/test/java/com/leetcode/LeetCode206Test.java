@@ -87,8 +87,7 @@ public class LeetCode206Test {
     public void testDoubleV1() {
         LeetCode206 leetCode206 = new LeetCode206();
         ListNode head = new ListNode(1);
-        ListNode two = new ListNode(2);
-        head.next = two;
+        head.next = new ListNode(2);
 
         ListNode listNode = leetCode206.reverseListV1(head);
         showListNode(listNode);
@@ -101,8 +100,7 @@ public class LeetCode206Test {
     public void testDoubleV2() {
         LeetCode206 leetCode206 = new LeetCode206();
         ListNode head = new ListNode(1);
-        ListNode two = new ListNode(2);
-        head.next = two;
+        head.next = new ListNode(2);
 
         ListNode listNode = leetCode206.reverseListV2(head);
         showListNode(listNode);
