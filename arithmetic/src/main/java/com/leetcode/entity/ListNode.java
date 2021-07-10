@@ -16,15 +16,4 @@ public class ListNode {
         this.val = val;
         this.next = next;
     }
-
-    /**
-     * 遍历链表
-     */
-    public void show() {
-        ListNode curr = this;
-        while (curr != null) {
-            System.out.println(curr.val);
-            curr = curr.next;
-        }
-    }
 }
