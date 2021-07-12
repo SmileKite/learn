@@ -9,6 +9,10 @@ public class LinkedStack<T> {
     /** 栈顶元素 */
     private ListNode<T> top = null;
 
+    /**
+     * 入栈操作
+     * @param t 入栈元素
+     */
     public void push(T t) {
         ListNode<T> temp = new ListNode<>(t);
         if (top != null) {
@@ -17,6 +21,10 @@ public class LinkedStack<T> {
         top = temp;
     }
 
+    /**
+     * 出栈操作
+     * @return 出栈元素
+     */
     public T pop() {
         if (top == null) {
             return null;
@@ -26,6 +34,10 @@ public class LinkedStack<T> {
         return val;
     }
 
+    /**
+     * 链表
+     * @param <T>
+     */
     private static class ListNode<T> {
         private T t;
         private ListNode<T> next;
