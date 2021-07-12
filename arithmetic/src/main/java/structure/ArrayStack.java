@@ -34,6 +34,7 @@ public class ArrayStack<T> {
      * @return 操作是否成功
      */
     public boolean push(T t) {
+        // 实现数组扩容，如果不支持扩容，应当返回false
         if (count == size) {
             this.size *= 2;
             Object[] temp = new Object[this.size];
