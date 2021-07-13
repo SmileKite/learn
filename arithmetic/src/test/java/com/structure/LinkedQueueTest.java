@@ -1,7 +1,6 @@
 package com.structure;
 
 import org.junit.Test;
-import structure.LinkedQueue;
 
 /**
  * 基于链表实现的队列测试类

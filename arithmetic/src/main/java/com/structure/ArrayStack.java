@@ -1,4 +1,4 @@
-package structure;
+package com.structure;
 
 /**
  * 基于数组实现的栈

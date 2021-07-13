@@ -1,7 +1,6 @@
 package com.structure;
 
 import org.junit.Test;
-import structure.ArrayStack;
 
 import java.awt.*;
 

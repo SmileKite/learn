@@ -1,7 +1,6 @@
 package com.structure;
 
 import org.junit.Test;
-import structure.CircleQueue;
 
 /**
  * 循环队列测试类
@@ -15,7 +14,7 @@ public class CircleQueueTest {
      */
     @Test
     public void testFullEnqueue() {
-        CircleQueue<Integer> queue = new CircleQueue<>(3);
+        CircleQueue<Integer> queue = new CircleQueue<Integer>(3);
         System.out.println(queue.enqueue(1));
         System.out.println(queue.enqueue(2));
         System.out.println(queue.enqueue(3));
@@ -27,7 +26,7 @@ public class CircleQueueTest {
      */
     @Test
     public void testEmptyDequeue() {
-        CircleQueue<Integer> queue = new CircleQueue<>(3);
+        CircleQueue<Integer> queue = new CircleQueue<Integer>(3);
         System.out.println(queue.dequeue());
         System.out.println(queue.toString());
     }
@@ -37,7 +36,7 @@ public class CircleQueueTest {
      */
     @Test
     public void testQueue() {
-        CircleQueue<String> queue = new CircleQueue<>(4);
+        CircleQueue<String> queue = new CircleQueue<String>(4);
         queue.enqueue("a");
         queue.enqueue("b");
         queue.enqueue("c");

@@ -1,7 +1,6 @@
 package com.structure;
 
 import org.junit.Test;
-import structure.ArrayQueue;
 
 /**
  * 基于数组实现的队列测试类
@@ -15,7 +14,7 @@ public class ArrayQueueTest {
      */
     @Test
     public void testFullEnqueue() {
-        ArrayQueue<String> queue = new ArrayQueue<>(3);
+        ArrayQueue<String> queue = new ArrayQueue<String>(3);
         System.out.println(queue.enqueue("a"));
         System.out.println(queue.enqueue("b"));
         System.out.println(queue.enqueue("c"));
@@ -28,7 +27,7 @@ public class ArrayQueueTest {
      */
     @Test
     public void testEmptyDequeue() {
-        ArrayQueue<Integer> queue = new ArrayQueue<>(4);
+        ArrayQueue<Integer> queue = new ArrayQueue<Integer>(4);
         System.out.println(queue.dequeue());
         System.out.println(queue.toString());
     }
@@ -38,7 +37,7 @@ public class ArrayQueueTest {
      */
     @Test
     public void testQueue() {
-        ArrayQueue<String> queue = new ArrayQueue<>(3);
+        ArrayQueue<String> queue = new ArrayQueue<String>(3);
         queue.enqueue("a");
         queue.enqueue("b");
         System.out.println(queue.dequeue());

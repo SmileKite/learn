@@ -1,11 +1,11 @@
-package structure;
+package com.structure;
 
 /**
- * 循环队列
+ * 基于数组实现的队列
  * @author lizhenyu
- * @date 2021/7/13
+ * @date 2021/7/12
  */
-public class CircleQueue<T> {
+public class ArrayQueue<T> {
 
     /** 数组 */
     private Object[] items;
@@ -16,44 +16,48 @@ public class CircleQueue<T> {
     /** 栈大小 */
     private int size;
 
-    public CircleQueue(int size) {
+    public ArrayQueue(int size) {
         this.size = size;
-        items = new Object[size];
+        this.items = new Object[this.size];
     }
 
     /**
-     * 入队
+     * 入队操作
      * @param t 入队元素
-     * @return 是否成功
+     * @return 操作是否成功
      */
     public boolean enqueue(T t) {
-        // 队列已满的判断
-        if ((tail+1)%size == head) {
-            return false;
+        // 队列已满
+        if (tail == size) {
+            if (head == 0) {
+                return false;
+            }
+            for (int i = head; i < size; i++) {
+                items[i-head] = items[i];
+            }
+            tail -= head;
+            head = 0;
         }
-        this.items[tail] = t;
-        tail = (tail+1)%size;
+        items[tail++] = t;
         return true;
     }
 
     /**
-     * 出队
+     * 出队操作
      * @return 出队元素
      */
     public T dequeue() {
-        // 队列为空的判断
-        if (tail == head) {
+        // 队列已空
+        if (head == tail) {
             return null;
         }
-        T val = (T) this.items[head];
-        head = (head+1)%size;
-        return val;
+        return (T) items[head++];
     }
 
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder("[");
-        for (int i = head; i != tail; i=(i+1)%size) {
+        for (int i = head; i < tail; i++) {
             builder.append(", ").append(this.items[i].toString());
         }
         return builder.append("]").toString().replaceFirst(", ", "");
