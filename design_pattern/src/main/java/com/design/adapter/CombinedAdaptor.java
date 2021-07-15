@@ -3,7 +3,7 @@ package com.design.adapter;
 /**
  * 基于类组合实现的适配器
  * @author lizhenyu
- * @date 2021/7/15
+ * @date 2021/6/26
  */
 public class CombinedAdaptor implements ITarget {
     private Adaptee adaptee;
