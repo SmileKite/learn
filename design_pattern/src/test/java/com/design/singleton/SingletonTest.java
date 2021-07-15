@@ -16,7 +16,7 @@ public class SingletonTest {
     public void testHungry() {
         int len = 5;
         for (int i = 0; i < len; i++) {
-            System.out.println(HungrySingletonDemo.getInstance());
+            System.out.println(HungrySingleton.getInstance());
         }
     }
 
@@ -27,7 +27,7 @@ public class SingletonTest {
     public void testLazy() {
         int len = 5;
         for (int i = 0; i < len; i++) {
-            System.out.println(LazySingletonDemo.getInstance());
+            System.out.println(LazySingleton.getInstance());
         }
     }
 
@@ -38,7 +38,7 @@ public class SingletonTest {
     public void testDoubleCheck() {
         int len = 5;
         for (int i = 0; i < len; i++) {
-            System.out.println(DoubleCheckSingletonDemo.getInstance());
+            System.out.println(DoubleCheckSingleton.getInstance());
         }
     }
 
@@ -49,7 +49,7 @@ public class SingletonTest {
     public void testStaticInner() {
         int len = 5;
         for (int i = 0; i < len; i++) {
-            System.out.println(StaticInnerSingletonDemo.getInstance());
+            System.out.println(StaticInnerSingleton.getInstance());
         }
     }
 
@@ -60,7 +60,7 @@ public class SingletonTest {
     public void testEnum() {
         int len = 5;
         for (int i = 0; i < len; i++) {
-            System.out.println(EnumSingletonDemo.getInstance());
+            System.out.println(EnumSingleton.getInstance());
         }
     }
 
@@ -72,12 +72,12 @@ public class SingletonTest {
         int len = 5;
         new Thread(()->{
             for (int j = 0; j < len; j++) {
-                System.out.println("thread1:"+ ThreadSingletonDemo.getInstance());
+                System.out.println("thread1:"+ ThreadSingleton.getInstance());
             }
         }).start();
         new Thread(()->{
             for (int j = 0; j < len; j++) {
-                System.out.println("thread2:"+ ThreadSingletonDemo.getInstance());
+                System.out.println("thread2:"+ ThreadSingleton.getInstance());
             }
         }).start();
     }

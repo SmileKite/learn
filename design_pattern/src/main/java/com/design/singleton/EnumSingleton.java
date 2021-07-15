@@ -5,20 +5,20 @@ package com.design.singleton;
  * @author lizhenyu
  * @date 2021/6/14
  */
-public class EnumSingletonDemo {
+public class EnumSingleton {
 
-    private static EnumSingletonDemo instance;
-    private EnumSingletonDemo(){}
-    public static EnumSingletonDemo getInstance() {
+    private static EnumSingleton instance;
+    private EnumSingleton(){}
+    public static EnumSingleton getInstance() {
         return EnumHolder.INSTANCE.getInstance();
     }
 
     enum EnumHolder {
         INSTANCE;
         private EnumHolder(){
-            instance = new EnumSingletonDemo();
+            instance = new EnumSingleton();
         }
-        public EnumSingletonDemo getInstance() {
+        public EnumSingleton getInstance() {
             return instance;
         }
     }
