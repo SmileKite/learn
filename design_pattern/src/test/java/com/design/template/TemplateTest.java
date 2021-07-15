@@ -14,8 +14,8 @@ public class TemplateTest {
      */
     @Test
     public void testTemplate() {
-        TemplateDemo.AbstractTemplate template1 = new TemplateDemo.Template1();
-        TemplateDemo.AbstractTemplate template2 = new TemplateDemo.Template2();
+        AbstractTemplate template1 = new TemplateA();
+        AbstractTemplate template2 = new TemplateB();
         template1.run();
         template2.run();
     }
