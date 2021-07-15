@@ -14,11 +14,10 @@ public class AdapterTest {
      */
     @Test
     public void testClassAdapter() {
-        ClassAdapterDemo.ITarget adaptor = new ClassAdapterDemo.Adaptor();
-        System.out.println(adaptor.add(1, 3));
-        System.out.println(adaptor.subtract(8, 3));
-        System.out.println(adaptor.multiply(3, 3));
-        System.out.println(adaptor.divide(11, 3));
+        ITarget target = new ClassAdaptor();
+        target.actionA();
+        target.actionB();
+        target.actionC();
     }
 
     /**
@@ -26,11 +25,10 @@ public class AdapterTest {
      */
     @Test
     public void testCombinedAdapter() {
-        CombinedAdapterDemo.ITarget adaptor = new CombinedAdapterDemo.Adaptor(new CombinedAdapterDemo.Adaptee());
-        System.out.println(adaptor.add(1, 3));
-        System.out.println(adaptor.subtract(8, 3));
-        System.out.println(adaptor.multiply(3, 3));
-        System.out.println(adaptor.divide(11, 3));
+        ITarget target = new CombinedAdaptor(new Adaptee());
+        target.actionA();
+        target.actionB();
+        target.actionC();
     }
 
 }
