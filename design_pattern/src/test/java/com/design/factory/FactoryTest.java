@@ -1,5 +1,9 @@
 package com.design.factory;
 
+import com.design.factory.abs.AbstractFactory;
+import com.design.factory.abs.IFactory;
+import com.design.factory.method.MethodFactory;
+import com.design.factory.simple.SimpleFactory;
 import org.junit.Test;
 
 /**
@@ -14,10 +18,25 @@ public class FactoryTest {
      */
     @Test
     public void testSimple() {
-        boolean c1 = SimpleFactoryDemo.createChildren("children1") instanceof SimpleFactoryDemo.Children1;
-        boolean c2 = SimpleFactoryDemo.createChildren("children2") instanceof SimpleFactoryDemo.Children2;
-        boolean c3 = SimpleFactoryDemo.createChildren("children3") instanceof SimpleFactoryDemo.Children3;
-        System.out.println(c1+","+c2+","+c3+".");
+        System.out.println(SimpleFactory.createChildren("childrenA"));
+        System.out.println(SimpleFactory.createChildren("childrenB"));
+        System.out.println(SimpleFactory.createChildren("childrenC"));
+    }
+
+    /**
+     * 测试简单工厂传入参数为null的情况
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testSimpleNullArg() {
+        SimpleFactory.createChildren(null);
+    }
+
+    /**
+     * 测试简单工厂传入参数不存在的情况
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testSimpleNotExistArg() {
+        SimpleFactory.createChildren("childrenD");
     }
 
     /**
@@ -25,10 +44,25 @@ public class FactoryTest {
      */
     @Test
     public void testMethod() {
-        boolean c1 = MethodFactoryDemo.createFactory("children1").create() instanceof MethodFactoryDemo.Children1;
-        boolean c2 = MethodFactoryDemo.createFactory("children2").create() instanceof MethodFactoryDemo.Children2;
-        boolean c3 = MethodFactoryDemo.createFactory("children3").create() instanceof MethodFactoryDemo.Children3;
-        System.out.println(c1+","+c2+","+c3+".");
+        System.out.println(MethodFactory.createChildren("childrenA"));
+        System.out.println(MethodFactory.createChildren("childrenB"));
+        System.out.println(MethodFactory.createChildren("childrenC"));
+    }
+
+    /**
+     * 测试工厂方法传入参数为null的情况
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testMethodNullArg() {
+        MethodFactory.createChildren(null);
+    }
+
+    /**
+     * 测试工厂方法传入参数不存在的情况
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testMethodNotExistArg() {
+        MethodFactory.createChildren("childrenD");
     }
 
     /**
@@ -36,12 +70,28 @@ public class FactoryTest {
      */
     @Test
     public void testAbstract() {
-        boolean c11 = AbstractFactoryDemo.createFactory("children1").create1() instanceof AbstractFactoryDemo.Children11;
-        boolean c12 = AbstractFactoryDemo.createFactory("children2").create1() instanceof AbstractFactoryDemo.Children12;
-        boolean c13 = AbstractFactoryDemo.createFactory("children3").create1() instanceof AbstractFactoryDemo.Children13;
-        boolean c21 = AbstractFactoryDemo.createFactory("children1").create2() instanceof AbstractFactoryDemo.Children21;
-        boolean c22 = AbstractFactoryDemo.createFactory("children2").create2() instanceof AbstractFactoryDemo.Children22;
-        boolean c23 = AbstractFactoryDemo.createFactory("children3").create2() instanceof AbstractFactoryDemo.Children23;
-        System.out.println(c11+","+c12+","+c13+";"+c21+","+c22+","+c23+".");
+        IFactory factoryA = AbstractFactory.createChildren("childrenA");
+        IFactory factoryB = AbstractFactory.createChildren("childrenB");
+        IFactory factoryC = AbstractFactory.createChildren("childrenC");
+        System.out.println(factoryA.createA());
+        System.out.println(factoryA.createB());
+        System.out.println(factoryB.createA());
+        System.out.println(factoryC.createB());
+    }
+
+    /**
+     * 测试抽象工厂传入参数为null的情况
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testAbstractNullArg() {
+        AbstractFactory.createChildren(null);
+    }
+
+    /**
+     * 测试抽象工厂传入参数不存在的情况
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testAbstractNotExistArg() {
+        AbstractFactory.createChildren("childrenD");
     }
 }
