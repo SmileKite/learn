@@ -13,7 +13,7 @@ import java.util.Date;
  * @author lizhenyu
  * @date 2021/6/19
  */
-public class BuilderDemo {
+public class BuilderDesign {
 
     private String name;
     private String attr1;
@@ -23,13 +23,13 @@ public class BuilderDemo {
     private Date date2;
     private int num1;
     private int num2;
-    public BuilderDemo(Builder builder) {
+    public BuilderDesign(Builder builder) {
         this.name = builder.name;
         this.attr1 = builder.attr1;
         this.attr2 = builder.attr2;
         this.attr3 = builder.attr3;
         this.date1 = builder.date1;
-        this.date1 = builder.date2;
+        this.date2 = builder.date2;
         this.num1 = builder.num1;
         this.num2 = builder.num2;
     }
@@ -43,7 +43,7 @@ public class BuilderDemo {
         private Date date2;
         private int num1;
         private int num2;
-        public BuilderDemo build() {
+        public BuilderDesign build() {
             boolean attr = attr1 == null && attr2 == null && attr3 == null
                     || attr1 != null && attr2 != null && attr3 != null;
             if (!attr) {
@@ -52,7 +52,7 @@ public class BuilderDemo {
             if (num1 == num2) {
                 throw new IllegalArgumentException("num1与num2不能相同！");
             }
-            return new BuilderDemo(this);
+            return new BuilderDesign(this);
         }
         public Builder setName(String name) {
             if (name == null || name.isEmpty()) {

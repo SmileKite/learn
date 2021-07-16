@@ -16,7 +16,7 @@ public class BuilderTest {
      */
     @Test
     public void testCorrect() {
-        BuilderDemo demo = new BuilderDemo.Builder()
+        BuilderDesign demo = new BuilderDesign.Builder()
                 .setName("zhang")
                 .setAttr1("1")
                 .setAttr2("2")
@@ -34,7 +34,7 @@ public class BuilderTest {
      */
     @Test(expected = IllegalArgumentException.class)
     public void testNameNullError() {
-        BuilderDemo demo = new BuilderDemo.Builder()
+        BuilderDesign demo = new BuilderDesign.Builder()
                 .setName("")
                 .setAttr1("1")
                 .setAttr2("2")
@@ -52,7 +52,7 @@ public class BuilderTest {
      */
     @Test(expected = IllegalArgumentException.class)
     public void testAttrConformityError() {
-        BuilderDemo demo = new BuilderDemo.Builder()
+        BuilderDesign demo = new BuilderDesign.Builder()
                 .setName("zhang")
                 .setAttr1("1")
                 .setAttr2(null)
@@ -70,7 +70,7 @@ public class BuilderTest {
      */
     @Test(expected = IllegalArgumentException.class)
     public void testNumNegativeError() {
-        BuilderDemo demo = new BuilderDemo.Builder()
+        BuilderDesign demo = new BuilderDesign.Builder()
                 .setName("zhang")
                 .setAttr1("1")
                 .setAttr2("2")
@@ -88,7 +88,7 @@ public class BuilderTest {
      */
     @Test(expected = IllegalArgumentException.class)
     public void testNumSameError() {
-        BuilderDemo demo = new BuilderDemo.Builder()
+        BuilderDesign demo = new BuilderDesign.Builder()
                 .setName("zhang")
                 .setAttr1("1")
                 .setAttr2("2")
