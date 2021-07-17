@@ -12,7 +12,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class ShallowCloneDemo implements Cloneable {
+public class ShallowClone implements Cloneable {
 
     private long id;
     private String name;

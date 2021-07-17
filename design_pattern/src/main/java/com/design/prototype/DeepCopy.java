@@ -14,7 +14,7 @@ import java.io.*;
 @Getter
 @Setter
 @ToString
-public class DeepCopyDemo implements Serializable {
+public class DeepCopy implements Serializable {
 
     private long id;
     private String name;

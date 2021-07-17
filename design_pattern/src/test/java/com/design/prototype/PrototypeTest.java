@@ -17,17 +17,17 @@ public class PrototypeTest {
      */
     @Test
     public void testShallowClone() throws CloneNotSupportedException {
-        ShallowCloneDemo.Address address = new ShallowCloneDemo.Address();
+        ShallowClone.Address address = new ShallowClone.Address();
         address.setProvince("山西");
         address.setCity("忻州");
         address.setTown("砂河");
-        ShallowCloneDemo demo = new ShallowCloneDemo();
+        ShallowClone demo = new ShallowClone();
         demo.setId(1);
         demo.setName("张三");
         demo.setAge(5);
         demo.setAddress(address);
 
-        ShallowCloneDemo clone = (ShallowCloneDemo) demo.clone();
+        ShallowClone clone = (ShallowClone) demo.clone();
         clone.setId(2);
         clone.setName("李四");
 
@@ -41,17 +41,17 @@ public class PrototypeTest {
      */
     @Test
     public void testDeepClone() throws CloneNotSupportedException {
-        DeepCloneDemo.Address address = new DeepCloneDemo.Address();
+        DeepClone.Address address = new DeepClone.Address();
         address.setProvince("山西");
         address.setCity("忻州");
         address.setTown("砂河");
-        DeepCloneDemo demo = new DeepCloneDemo();
+        DeepClone demo = new DeepClone();
         demo.setId(1);
         demo.setName("张三");
         demo.setAge(5);
         demo.setAddress(address);
 
-        DeepCloneDemo clone = (DeepCloneDemo) demo.clone();
+        DeepClone clone = (DeepClone) demo.clone();
         clone.setId(2);
         clone.setName("李四");
 
@@ -61,17 +61,17 @@ public class PrototypeTest {
 
     @Test
     public void testDeepCopy() throws IOException, ClassNotFoundException {
-        DeepCopyDemo.Address address = new DeepCopyDemo.Address();
+        DeepCopy.Address address = new DeepCopy.Address();
         address.setProvince("山西");
         address.setCity("忻州");
         address.setTown("砂河");
-        DeepCopyDemo demo = new DeepCopyDemo();
+        DeepCopy demo = new DeepCopy();
         demo.setId(1);
         demo.setName("张三");
         demo.setAge(5);
         demo.setAddress(address);
 
-        DeepCopyDemo clone = (DeepCopyDemo) demo.deepCopy();
+        DeepCopy clone = (DeepCopy) demo.deepCopy();
 
         System.out.println(demo.toString());
         System.out.println(clone.toString());

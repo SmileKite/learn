@@ -12,7 +12,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class DeepCloneDemo implements Cloneable {
+public class DeepClone implements Cloneable {
     private long id;
     private String name;
     private int age;
@@ -33,9 +33,9 @@ public class DeepCloneDemo implements Cloneable {
 
     @Override
     public Object clone() throws CloneNotSupportedException {
-        DeepCloneDemo deepCloneDemo = (DeepCloneDemo) super.clone();
-        Address address = (Address) deepCloneDemo.address.clone();
-        deepCloneDemo.setAddress(address);
-        return deepCloneDemo;
+        DeepClone deepClone = (DeepClone) super.clone();
+        Address address = (Address) deepClone.address.clone();
+        deepClone.setAddress(address);
+        return deepClone;
     }
 }
