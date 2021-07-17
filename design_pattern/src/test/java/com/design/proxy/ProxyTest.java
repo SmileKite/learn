@@ -1,5 +1,7 @@
 package com.design.proxy;
 
+import com.design.proxy.entity.ITarget;
+import com.design.proxy.entity.Target;
 import org.junit.Test;
 
 import java.lang.reflect.Proxy;
@@ -16,10 +18,9 @@ public class ProxyTest {
      */
     @Test
     public void testCombinedStaticProxy() {
-        CombinedStaticProxyDemo.IStaticProxy proxy =
-                new CombinedStaticProxyDemo.StaticProxy(new CombinedStaticProxyDemo.StaticProxyImpl());
-        proxy.a();
-        proxy.b();
+        CombinedStaticProxy proxy = new CombinedStaticProxy(new Target());
+        proxy.actionA();
+        proxy.actionB();
     }
 
     /**
@@ -27,9 +28,9 @@ public class ProxyTest {
      */
     @Test
     public void testExtendStaticProxy() {
-        ExtendStaticProxyDemo.Static proxy = new ExtendStaticProxyDemo.StaticProxy();
-        proxy.a();
-        proxy.b();
+        ExtendStaticProxy proxy = new ExtendStaticProxy();
+        proxy.actionA();
+        proxy.actionB();
     }
 
     /**
@@ -37,10 +38,11 @@ public class ProxyTest {
      */
     @Test
     public void testDynamicProxy() {
-        DynamicProxyDemo.IDynamicProxy real = new DynamicProxyDemo.DynamicProxy();
-        DynamicProxyDemo.DynamicProxyHandler handler = new DynamicProxyDemo.DynamicProxyHandler(real);
-        DynamicProxyDemo.IDynamicProxy proxy = (DynamicProxyDemo.IDynamicProxy)
-                Proxy.newProxyInstance(real.getClass().getClassLoader(), real.getClass().getInterfaces(), handler);
-        proxy.deal();
+        ITarget target = new Target();
+        DynamicProxy handler = new DynamicProxy(target);
+        ITarget proxy = (ITarget) Proxy.newProxyInstance(
+                target.getClass().getClassLoader(), target.getClass().getInterfaces(), handler);
+        proxy.actionA();
+        proxy.actionB();
     }
 }
