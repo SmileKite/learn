@@ -1,5 +1,14 @@
 package com.design.chain;
 
+import com.design.chain.array.ChainArray;
+import com.design.chain.array.ITarget;
+import com.design.chain.array.impl.TargetA;
+import com.design.chain.array.impl.TargetB;
+import com.design.chain.array.impl.TargetC;
+import com.design.chain.linked.ChainLinked;
+import com.design.chain.linked.impl.ChainLinkedA;
+import com.design.chain.linked.impl.ChainLinkedB;
+import com.design.chain.linked.impl.ChainLinkedC;
 import org.junit.Test;
 
 /**
@@ -14,27 +23,27 @@ public class ChainTest {
      */
     @Test
     public void testLinkedChain() {
-        ChainLinkedDemo.Handler handlerA = new ChainLinkedDemo.HandlerA() {
+        ChainLinked chainA = new ChainLinkedA(){
             @Override
-            protected boolean check() {
+            protected boolean result() {
                 return false;
             }
         };
-        ChainLinkedDemo.Handler handlerB = new ChainLinkedDemo.HandlerB() {
+        ChainLinked chainB = new ChainLinkedB(){
             @Override
-            protected boolean check() {
-                return true;
-            }
-        };
-        ChainLinkedDemo.Handler handlerC = new ChainLinkedDemo.HandlerC() {
-            @Override
-            protected boolean check() {
+            protected boolean result() {
                 return false;
             }
         };
-        handlerA.setNext(handlerB);
-        handlerB.setNext(handlerC);
-        handlerA.handle();
+        ChainLinked chainC = new ChainLinkedC(){
+            @Override
+            protected boolean result() {
+                return false;
+            }
+        };
+        chainA.setNext(chainB);
+        chainB.setNext(chainC);
+        chainA.handle();
     }
 
     /**
@@ -42,29 +51,29 @@ public class ChainTest {
      */
     @Test
     public void testArrayChain() {
-        ChainArrayDemo.Handler handlerA = new ChainArrayDemo.HandlerA() {
+        ITarget targetA = new TargetA(){
             @Override
-            protected boolean check() {
+            protected boolean result() {
                 return false;
             }
         };
-        ChainArrayDemo.Handler handlerB = new ChainArrayDemo.HandlerB() {
+        ITarget targetB = new TargetB(){
             @Override
-            protected boolean check() {
-                return false;
-            }
-        };
-        ChainArrayDemo.Handler handlerC = new ChainArrayDemo.HandlerC() {
-            @Override
-            protected boolean check() {
+            protected boolean result() {
                 return true;
             }
         };
+        ITarget targetC = new TargetC(){
+            @Override
+            protected boolean result() {
+                return false;
+            }
+        };
 
-        ChainArrayDemo.Chain chain = new ChainArrayDemo.Chain();
-        chain.addHandler(handlerA);
-        chain.addHandler(handlerB);
-        chain.addHandler(handlerC);
-        chain.handle();
+        ChainArray array = new ChainArray();
+        array.add(targetA);
+        array.add(targetB);
+        array.add(targetC);
+        array.handle();
     }
 }
