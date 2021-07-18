@@ -1,5 +1,6 @@
 package com.design.iterator;
 
+import com.design.iterator.impl.ArrayList;
 import org.junit.Test;
 
 /**
@@ -14,13 +15,13 @@ public class IteratorTest {
      */
     @Test
     public void testIterator() {
-        IteratorDemo.List<String> arrayList = new IteratorDemo.ArrayList<>(5);
+        List<String> arrayList = new ArrayList<>(5);
         arrayList.add("a");
         arrayList.add("b");
         arrayList.add("c");
         arrayList.add("d");
         arrayList.add("e");
-        IteratorDemo.Iterator<String> iterator = arrayList.iterator();
+        Iterator<String> iterator = arrayList.iterator();
         while(iterator.hasNext()) {
             System.out.println(iterator.currentItem());
             iterator.next();
