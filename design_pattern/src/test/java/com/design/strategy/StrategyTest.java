@@ -14,9 +14,9 @@ public class StrategyTest {
      */
     @Test(expected = IllegalArgumentException.class)
     public void testNullArgument() {
-        StrategyDemo.StrategyFactory factory = new StrategyDemo.StrategyFactory();
-        StrategyDemo.IStrategy strategy = factory.getStrategy(null);
-        strategy.run();
+        StrategyFactory factory = new StrategyFactory();
+        IStrategy strategy = factory.getStrategy(null);
+        strategy.action();
     }
 
     /**
@@ -24,9 +24,9 @@ public class StrategyTest {
      */
     @Test(expected = IllegalArgumentException.class)
     public void testEmptyArgument() {
-        StrategyDemo.StrategyFactory factory = new StrategyDemo.StrategyFactory();
-        StrategyDemo.IStrategy strategy = factory.getStrategy("");
-        strategy.run();
+        StrategyFactory factory = new StrategyFactory();
+        IStrategy strategy = factory.getStrategy("");
+        strategy.action();
     }
 
     /**
@@ -34,9 +34,9 @@ public class StrategyTest {
      */
     @Test
     public void testStaticStrategy() {
-        StrategyDemo.StrategyFactory factory = new StrategyDemo.StrategyFactory();
-        StrategyDemo.IStrategy strategy = factory.getStrategy("A");
-        strategy.run();
+        StrategyFactory factory = new StrategyFactory();
+        IStrategy strategy = factory.getStrategy("A");
+        strategy.action();
     }
 
 }
