@@ -1,5 +1,12 @@
 package com.design.bridge;
 
+import com.design.bridge.message.impl.CommonMessageProcess;
+import com.design.bridge.message.impl.EncryptionMessageProcess;
+import com.design.bridge.message.impl.RichMessageProcess;
+import com.design.bridge.output.Output;
+import com.design.bridge.output.impl.ConsoleOutput;
+import com.design.bridge.output.impl.DataSourceOutput;
+import com.design.bridge.output.impl.EmailOutput;
 import org.junit.Test;
 
 /**
@@ -14,15 +21,14 @@ public class BridgeTest {
      */
     @Test
     public void testBridge() {
-        // 实现角色1
-        BridgeDemo.Implementor implementor1 = new BridgeDemo.Implementor1();
-        // 抽象角色1
-        BridgeDemo.Abstraction abstraction1 = new BridgeDemo.Abstract1(implementor1);
-        abstraction1.deal();
-        // 实现角色2
-        BridgeDemo.Implementor implementor2 = new BridgeDemo.Implementor2();
-        // 抽象角色2
-        BridgeDemo.Abstraction abstraction2 = new BridgeDemo.Abstract2(implementor2);
-        abstraction2.deal();
+        // 入库加密
+        Output dataSourceOutput = new DataSourceOutput(new EncryptionMessageProcess("smileKite"));
+        dataSourceOutput.output();
+        // 发电子邮件
+        Output emailOutput = new EmailOutput(new RichMessageProcess("谢谢"));
+        emailOutput.output();
+        // 控制台显示
+        Output consoleOutput = new ConsoleOutput(new CommonMessageProcess("呜啦啦"));
+        consoleOutput.output();
     }
 }
