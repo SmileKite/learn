@@ -14,10 +14,13 @@ public class CallbackTest {
      */
     @Test
     public void TestCallback() {
-        CallbackDemo.CallbackClass callbackClass = new CallbackDemo.CallbackClass();
-        callbackClass.action((a)->{
-            System.out.println(a+"执行了回调");
-            return "回调执行成功！";
+        Target target = new Target();
+        target.action(new ICallback() {
+            @Override
+            public String callback(String message) {
+                System.out.println("回调函数执行："+message);
+                return "执行成功";
+            }
         });
     }
 }
