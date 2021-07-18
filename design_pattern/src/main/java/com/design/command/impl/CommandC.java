@@ -3,7 +3,7 @@ package com.design.command.impl;
 import com.design.command.ICommand;
 
 /**
- * 命令B
+ * 命令C
  * @author lizhenyu
  * @date 2021/7/18
  */
