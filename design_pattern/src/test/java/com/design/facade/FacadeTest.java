@@ -1,5 +1,6 @@
 package com.design.facade;
 
+import com.design.facade.impl.Facade;
 import org.junit.Test;
 
 /**
@@ -14,9 +15,12 @@ public class FacadeTest {
      */
     @Test
     public void testFacade() {
-        FacadeDemo.IFacadeOut out = new FacadeDemo.FacadeOutImpl();
-        out.showAddToConsole(1, 5);
-        out.showDivideToDatasource(9, 4);
-        out.showComplexToMail(2, 5, 3);
+        IFacade facade = new Facade();
+        facade.runA();
+        System.out.println("============================");
+        facade.runB();
+        System.out.println("============================");
+        facade.runC();
+        System.out.println("============================");
     }
 }
