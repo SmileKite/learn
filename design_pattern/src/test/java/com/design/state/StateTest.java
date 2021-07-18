@@ -1,5 +1,6 @@
 package com.design.state;
 
+import com.design.state.impl.StateA;
 import org.junit.Test;
 
 /**
@@ -15,10 +16,15 @@ public class StateTest {
     @Test
     public void testState() {
         // 创建状态机，初始化为A状态
-        StateDemo.StateMachine machine = new StateDemo.StateMachine(new StateDemo.StateA());
+        StateMachine machine = new StateMachine(new StateA());
+        System.out.println(machine.getState());
         machine.triggerEventB();
+        System.out.println(machine.getState());
         machine.triggerEventA();
+        System.out.println(machine.getState());
         machine.triggerEventC();
+        System.out.println(machine.getState());
         machine.triggerEventC();
+        System.out.println(machine.getState());
     }
 }
