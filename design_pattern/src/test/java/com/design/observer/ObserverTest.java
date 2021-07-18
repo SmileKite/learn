@@ -1,5 +1,10 @@
 package com.design.observer;
 
+import com.design.observer.observable.IObservable;
+import com.design.observer.observable.impl.Observable;
+import com.design.observer.observer.impl.ObserverA;
+import com.design.observer.observer.impl.ObserverB;
+import com.design.observer.observer.impl.ObserverC;
 import org.junit.Test;
 
 /**
@@ -14,10 +19,10 @@ public class ObserverTest {
      */
     @Test
     public void testObserver() {
-        ObserverDemo.ISubject subject = new ObserverDemo.SubjectImpl();
-        subject.registerObserver(new ObserverDemo.Observer1());
-        subject.removeObserver(new ObserverDemo.Observer1());
-        subject.registerObserver(new ObserverDemo.Observer2());
-        subject.notifyObservers();
+        IObservable observable = new Observable();
+        observable.registerObserver(new ObserverA());
+        observable.registerObserver(new ObserverB());
+        observable.registerObserver(new ObserverC());
+        observable.notifyObserver("测试一哈子");
     }
 }
