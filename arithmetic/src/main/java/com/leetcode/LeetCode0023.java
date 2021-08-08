@@ -18,16 +18,16 @@ public class LeetCode0023 {
      */
     public ListNode mergeKListsV1(ListNode[] lists) {
         ListNode result = null;
-        for (int i = 0, len = lists.length; i < len; i++) {
-            result = mergeLists(result, lists[i]);
+        for (ListNode listNode : lists) {
+            result = mergeLists(result, listNode);
         }
         return result;
     }
 
     /**
      * 分治递归合并
-     * @param lists
-     * @return
+     * @param lists 要合并的链表数组
+     * @return 合并后的有序链表
      */
     public ListNode mergeKListsV2(ListNode[] lists) {
         return mergeKListsV2(lists, 0, lists.length-1);
