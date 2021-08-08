@@ -9,8 +9,26 @@ import org.junit.Test;
  */
 public class LeetCode0023Test {
 
-    public void testEmpty() {
+    /**
+     * 测试链表为空的情况
+     */
+    @Test
+    public void testEmptyV1() {
+        LeetCode0023 leetCode0023 = new LeetCode0023();
 
+        ListNode listNode = leetCode0023.mergeKListsV1(new ListNode[]{});
+        showListNode(listNode);
+    }
+
+    /**
+     * 测试链表为空的情况
+     */
+    @Test
+    public void testEmptyV2() {
+        LeetCode0023 leetCode0023 = new LeetCode0023();
+
+        ListNode listNode = leetCode0023.mergeKListsV2(new ListNode[]{});
+        showListNode(listNode);
     }
 
     /**
