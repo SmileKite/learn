@@ -11,7 +11,62 @@ import com.leetcode.entity.ListNode;
  */
 public class LeetCode0023 {
 
-    public ListNode mergeKLists(ListNode[] lists) {
-        return null;
+    /**
+     * 逐个递归合并
+     * @param lists 要合并的链表数组
+     * @return 合并后的链表
+     */
+    public ListNode mergeKListsV1(ListNode[] lists) {
+        ListNode result = null;
+        for (int i = 0, len = lists.length; i < len; i++) {
+            result = mergeLists(result, lists[i]);
+        }
+        return result;
+    }
+
+    /**
+     * 分治递归合并
+     * @param lists
+     * @return
+     */
+    public ListNode mergeKListsV2(ListNode[] lists) {
+        return mergeKListsV2(lists, 0, lists.length-1);
+    }
+
+    /**
+     * 合并有序链表
+     * @param lists 有序链表
+     * @param s 起始下标
+     * @param e 终止下标
+     * @return 合并后的有序链表
+     */
+    private ListNode mergeKListsV2(ListNode[] lists, int s, int e) {
+        if (s == e) {
+            return lists[s];
+        } else if (s > e) {
+            return null;
+        }
+        return mergeLists(mergeKListsV2(lists, s, (s+e)/2), mergeKListsV2(lists,(s+e)/2+1, e));
+    }
+
+    /**
+     * 合并两个有序链表
+     * @param first 有序链表1
+     * @param two 有序链表2
+     * @return 合并后的有序链表
+     */
+    private ListNode mergeLists(ListNode first, ListNode two) {
+        if (first == null) {
+            return two;
+        } else if (two == null) {
+            return first;
+        }
+        if (first.val < two.val) {
+            first.next = mergeLists(first.next, two);
+            return first;
+        } else {
+            two.next = mergeLists(first, two.next);
+            return two;
+        }
     }
 }
