@@ -8,13 +8,17 @@ import org.junit.Test;
  */
 public class LeetCode0187Test {
 
-    /**
-     * 测试只有一种字符的情况
-     */
     @Test
     public void test1() {
         LeetCode0187 leetCode0187 = new LeetCode0187();
 
         System.out.println(leetCode0187.findRepeatedDnaSequences("AAAAAAAAAAA"));
+    }
+
+    @Test
+    public void test2() {
+        LeetCode0187 leetCode0187 = new LeetCode0187();
+
+        System.out.println(leetCode0187.findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
     }
 }
