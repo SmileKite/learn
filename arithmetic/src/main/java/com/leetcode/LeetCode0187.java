@@ -13,7 +13,7 @@ public class LeetCode0187 {
 
     public List<String> findRepeatedDnaSequences(String s) {
         Set<String> result = new HashSet<>();
-        Set<String> set = new HashSet();
+        Set<String> set = new HashSet<>();
 
         for (int i = 0, len = s.length() - 10; i <= len; i++) {
             String str = s.substring(i, i+10);
